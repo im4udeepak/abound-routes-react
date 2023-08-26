@@ -9,10 +9,37 @@ import Expertise from "./pages/expertise/index";
 import Contact from "./pages/contact/index";
 import ScrollToTop from './components/shared/ScrollToTop';
 import Preloader from './components/shared/Preloader';
+import { Alert } from 'react-bootstrap';
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
+  const [show, setShow] = useState(true);
+  const [installPromptEvent, setInstallPromptEvent] = useState(null);
 
+  const handleBeforeInstallPrompt = (event) => {
+    // Prevent the default installation prompt
+    event.preventDefault();
+
+    // Store the event for later use
+    setInstallPromptEvent(event);
+  };
+
+  const handleAddToHomeScreen = () => {
+    if (installPromptEvent) {
+      installPromptEvent.prompt();
+      // Show your custom UI to prompt for installation
+      // You can add a button that, when clicked, calls `installPromptEvent.prompt()`
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener('beforeinstallprompt', handleBeforeInstallPrompt);
+
+    // Cleanup: Remove the event listener when the component unmounts
+    return () => {
+      window.removeEventListener('beforeinstallprompt', handleBeforeInstallPrompt);
+    };
+  }, []);
   useEffect(() => {
     const handleLoad = () => {
       setIsLoading(false);
@@ -28,18 +55,21 @@ function App() {
   }, []);
   return (
     <Router>
-        <Suspense fallback={<div></div>}>
-          <ScrollToTop />
-          <Routes>
-            <Route exact path="/" element={<Home />} />
-            <Route exact path="/about" element={<About />} />
-            <Route exact path="/sub-continent" element={<SubContinent />} />
-            <Route exact path="/curated-experiences" element={<CuratedExperience />} />
-            <Route exact path="/expertise" element={<Expertise />} />
-            <Route exact path="/contact" element={<Contact />} />
-            <Route path="*" element={<NotFoundPage />} />
-          </Routes>
-        </Suspense>
+      <Suspense fallback={<div></div>}>
+        <ScrollToTop />
+        <Routes>
+          <Route exact path="/" element={<Home />} />
+          <Route exact path="/about" element={<About />} />
+          <Route exact path="/sub-continent" element={<SubContinent />} />
+          <Route exact path="/curated-experiences" element={<CuratedExperience />} />
+          <Route exact path="/expertise" element={<Expertise />} />
+          <Route exact path="/contact" element={<Contact />} />
+          <Route path="*" element={<NotFoundPage />} />
+        </Routes>
+      </Suspense>
+      {show && (<Alert variant="info" style={{ position: "fixed", bottom: '0', left: '0', right: '0', zIndex: '101' }} className='mb-0' onClick={handleAddToHomeScreen} onClose={() => setShow(false)} dismissible>
+        <Alert.Heading className='mb-0'>Add to Home Screen</Alert.Heading>
+      </Alert>)}
     </Router>
   );
 }
