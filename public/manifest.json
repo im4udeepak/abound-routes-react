@@ -1,6 +1,7 @@
 {
+  "name": "Abound Routes",
   "short_name": "Abound Routes",
-  "name": "Abound Routes is a Destination Management Company that is committed to deliver its clients with exceptional services.",
+  "description": "Abound Routes is a Destination Management Company that is committed to deliver its clients with exceptional services.",
   "icons": [
     {
       "src": "favicon.ico",
