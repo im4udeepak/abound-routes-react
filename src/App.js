@@ -29,8 +29,10 @@ function App() {
   return (
     <Router>
       {isLoading ? (
-        <Preloader />
-      ) : (
+      //   <Preloader />
+      // ) : (
+        
+      // )}
         <Suspense fallback={<div></div>}>
           <ScrollToTop />
           <Routes>
@@ -43,7 +45,6 @@ function App() {
             <Route path="*" element={<NotFoundPage />} />
           </Routes>
         </Suspense>
-      )}
     </Router>
   );
 }
