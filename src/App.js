@@ -28,11 +28,6 @@ function App() {
   }, []);
   return (
     <Router>
-     // {isLoading ? (
-      //   <Preloader />
-      // ) : (
-        
-      // )}
         <Suspense fallback={<div></div>}>
           <ScrollToTop />
           <Routes>
