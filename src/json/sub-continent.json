@@ -1,0 +1,37 @@
+[
+    {
+        "title":"India",
+        "image":"india",
+        "description":"<p class='text mx-auto'> India is not just a country; it is an amalgamation of emotions and experiences that are cherished forever. Arguably the most diverse country of the world, India offers a wide array of age-old traditions, spirituality, festivals, cuisine and landscapes and cultures.</p><p class='text mx-auto'> From the snow-clad mountains of the north to sun-soaked beaches in the south, from lush green western ghats to barren golden sand deserts, India offers everything for every aspiration. Be it an adventure sport, a cultural rendezvous or leisure walk through the by lanes of old cities, India will surprise you at every step of the way. And just a delight for the eyes, India offers extreme pleasure for the taste buds too, with its equally diverse cuisines – some new and some centuries old.</p>"
+    },
+    {
+        "title":"Nepal",
+        "image":"nepal",
+        "description":"<p class='text mx-auto'> Under the beautiful canopy of the Himalayas, Nepal is a blend of breathtaking landscapes and rich cultural heritage. Nepal never disappoints. Whether you are a spirituality seeker or an adventurer, whether you want to experience local culture or unwind amidst nature, Nepal is a one-stop destination for all your objectives.</p>"
+    },
+    {
+        "title":"Bhutan",
+        "image":"bhutan",
+        "description":"<p class='text mx-auto'> The Land of Thunder Dragon – Bhutan is a bouquet of pristine forests, mesmerizing Himalayan views and the vibrant Buddhist culture. Bhutan has created an authentic travel experience through a very strong emphasis on sustainability and preservation of its natural treasures. The beautiful natural landscapes of Bhutan are punctuated with ancient fortresses and magnificent monasteries.</p>"
+    },
+    {
+        "title":"Sri Lanka",
+        "image":"srilanka",
+        "description":"<p class='text mx-auto'> Sri Lanka is a destination of top choice for those who love palm-fringed beaches, lush green tea plantations and ancient cultural sites. Sri Lanka offers a beautiful contrast of the bustling streets of Colombo and the serene hills of Kandy – the picturesque beaches of the south coast on one hand to the vibrant culture on the other. Sri Lanka is a paradise in itself with a plethora of exquisite experiences.</p>"
+    },
+    {
+        "title":"Maldives",
+        "image":"maldives",
+        "description":"<p class='text mx-auto'>This island nation is an ultimate travel destination that offers turquoise waters, white sand beaches and spectacular coral reefs. Maldives is an ideal destination for those who prefer to unwind in purity of nature away from the bustling city life. It offers many wonderful experiences like lounging in a luxurious over water villa, snorkeling, diving in the pristine waters to observe the colorful marine life and enjoying a romantic sunset cruise. </p>"
+    },
+    {
+        "title":"Vietnam",
+        "image":"vietnam",
+        "description":"<p class='text mx-auto'>Vietnam is as interesting as its mouth-watering cuisines, ancient temples and pagodas, local market and rice paddies. This beautiful land offers experiences that will be transformed into unforgettable memories like - trekking through the lush highlands of Sapa or cycling through the rice paddies, visit to bustling local markets and a visit to mystical ancient temples. </p>"
+    },
+    {
+        "title":"Tibet",
+        "image":"tibet",
+        "description":"<p class='text mx-auto'>One should keep their expectations higher while coming to experience the ‘Roof of the World’ – Tibet. This land of rugged landscapes, soaring peaks and divine Buddhist culture, is an escape to peace and spirituality. This is the best way to closely observe / study and understand Tibet Buddhism. </p>"
+    }
+]

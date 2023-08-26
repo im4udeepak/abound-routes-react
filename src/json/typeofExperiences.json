@@ -1,0 +1,47 @@
+[
+    {
+        "title": "Culture & Heritage",
+        "image": "cultureHeritage",
+        "description": "The rich culture and heritage are on display in the most beautiful way possible here. From ancient architecture, medieval marvels to modern day miracles, the sub-continent’s culture and heritage will transport you to an altogether new era."
+    },
+    {
+        "title": "Adventure",
+        "image": "adventure",
+        "description": "The diverse topography is a perfect dais to display the most authentic and thrilling experiences. The sub-continent is known for rugged terrain trekking, deep sea diving, sky diving, forest safaris, dune bashing and many more."
+    },
+    {
+        "title": "Yoga & Wellness",
+        "image": "yoga-wellness",
+        "description": "Being a birth place of Yoga, no other place offers authentic wellness programs like the sub-continent does. Beautiful ashrams in north to stunning retreats in south, India has a wealth of wellness. Whether you are looking for self-directed routine to guided wellness sessions, you will be provided with the best of this ancient wellness art."
+    },
+    {
+        "title": "Luxury",
+        "image": "luxury",
+        "description": "Pamper yourself with the ultimate luxury the sub-continent has to offer. Feel like a Maharaja / Maharani as you check in to your palace hotel, grand private villas or super luxurious yachts. Travel like a king in a luxury train which is a luxurious experience like no other. All this personalized according to your taste and preference."
+    },
+    {
+        "title": "History",
+        "image": "history",
+        "description": "Witness history that dates back thousands of years - from the ancient Indus Valley Civilization to the era of Raj. Get introduced to the annals and antiquities of the grandest period of history and discover the stories, legends and myths that shape imaginations of the bygone era."
+    },
+    {
+        "title": "Colors",
+        "image": "colours",
+        "description": "Indian sub-continent is as vibrant as the colors of its festivals–while the colors of Holi paint individuals with happiness, the sparkling diyas and lights of Diwali decorate the ambience in various colors. Numerous other festivals, some with muted shades other with more vibrancy are celebrated with a spirit of unity, happiness and peace"
+    },
+    {
+        "title": "Region",
+        "image": "religion",
+        "description": "India is a beautiful blend of various religions celebrated across the length and breadth of the land. Each with its beauty, a message of brotherhood and unity in diversity. From the vibrant Holi to lighted Diwali, from auspicious Eid to merry Christmas, the Indian sub-continent celebrates festivals every day of the year."
+    },
+    {
+        "title": "Sports",
+        "image": "sports",
+        "description": "With a huge percentage of youth in population, sports are promoted in the sub-continent at a fast pace. A population of more than a billion celebrates sports like cricket with great fervor. Other sports have also gained great prominence around the sub-continent with unique Golf Tours, Kerala Boat Race and Skiing."
+    },
+    {
+        "title": "Wildlife",
+        "image": "wildlife",
+        "description": "The sub-continent is a paradise for wildlife enthusiasts and wildlife professionals alike. The sub-continent has preserved its wildlife impeccably. The national parks and tiger reserves across offer an opportunity to track a tiger in its territory or to have an encounter with a majestic Rhino. These habitats are also apt for activities like bird watching."
+    }
+]

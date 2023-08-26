@@ -1,0 +1,5 @@
+@import "/node_modules/bootstrap/dist/css/bootstrap.css";
+@import "./assets/fonts/font-awesome.min.css";
+@import "slick-carousel/slick/slick.css";
+@import "./assets/css/style.css";
+@import "./assets/css/responsive.css";
