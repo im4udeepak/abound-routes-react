@@ -28,7 +28,7 @@ function App() {
   }, []);
   return (
     <Router>
-      {isLoading ? (
+     // {isLoading ? (
       //   <Preloader />
       // ) : (
         
