@@ -31,15 +31,6 @@ function App() {
       // You can add a button that, when clicked, calls `installPromptEvent.prompt()`
     }
   };
-
-  useEffect(() => {
-    window.addEventListener('beforeinstallprompt', handleBeforeInstallPrompt);
-
-    // Cleanup: Remove the event listener when the component unmounts
-    return () => {
-      window.removeEventListener('beforeinstallprompt', handleBeforeInstallPrompt);
-    };
-  }, []);
   useEffect(() => {
     const handleLoad = () => {
       setIsLoading(false);
@@ -77,4 +68,10 @@ const NotFoundPage = () => {
   // Redirect to the homepage
   return <Navigate to="/" replace />;
 };
+// Move the event listener outside of the component to ensure it's only attached once
+window.addEventListener('beforeinstallprompt', (event) => {
+  // Prevent the default behavior of the installation prompt
+  event.preventDefault();
+  // You can store the event or handle it directly here
+});
 export default App;
