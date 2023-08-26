@@ -1,9 +1,49 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Layout from '../../components/shared/Layout';
 import PageBanner from '../../components/shared/PageBanner';
 import { Link } from 'react-router-dom';
 
 function Contact(props) {
+    const [formData, setFormData] = useState({
+        name: '',
+        email: '',
+        message: ''
+    });
+    const [validationErrors, setValidationErrors] = useState({
+        name: '',
+        email: '',
+        message: ''
+    });
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setFormData((prevData) => ({
+            ...prevData,
+            [name]: value
+        }));
+    };
+    const validateForm = () => {
+        const errors = {};
+        if (!formData.name) {
+            errors.name = 'Name is required';
+        }
+        if (!formData.email) {
+            errors.email = 'Email is required';
+        } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
+            errors.email = 'Invalid email format';
+        }
+        if (!formData.message) {
+            errors.message = 'Message is required';
+        }
+        setValidationErrors(errors);
+        return Object.keys(errors).length === 0; // Return true if no errors
+    };
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        if (validateForm()) {
+            console.log(formData,"values")
+        }
+    };
     return (
         <Layout>
             <main className="thm-bg-color-three position-relative" style={{ zIndex: '1' }}>
@@ -48,7 +88,7 @@ function Contact(props) {
                                         </Link>
                                     </li>
                                 </ul>
-                                <form action="#" className="p-4 bg-white">
+                                <form onSubmit={handleSubmit} className="p-4 bg-white">
                                     <div className="row">
                                         <div className="form-group col-md-6">
                                             <label htmlFor="fullname" className="thm-font-serif">
@@ -57,11 +97,13 @@ function Contact(props) {
                                             <input
                                                 type="text"
                                                 className="form-control form-control-custom"
-                                                name="fullname"
+                                                name='name'
+                                                value={formData.name} onChange={handleChange}
                                                 id="fullname"
                                                 placeholder="Enter your full name"
                                                 required=""
                                             />
+                                            {validationErrors.name && <span className="invalid-feedback d-block">{validationErrors.name}</span>}
                                         </div>
                                         <div className="form-group col-md-6">
                                             <label htmlFor="email" className="thm-font-serif">
@@ -70,11 +112,13 @@ function Contact(props) {
                                             <input
                                                 type="email"
                                                 className="form-control form-control-custom"
-                                                name="email"
+                                                name='email'
+                                                value={formData.email} onChange={handleChange}
                                                 id="email"
                                                 placeholder="Enter your email i'd"
                                                 required=""
                                             />
+                                            {validationErrors.email && <span className="invalid-feedback d-block">{validationErrors.email}</span>}
                                         </div>
                                     </div>
                                     <div className="form-group">
@@ -84,11 +128,12 @@ function Contact(props) {
                                         <textarea
                                             rows={4}
                                             className="form-control form-control-custom"
-                                            name="message"
+                                            name='message'
+                                            value={formData.message} onChange={handleChange}
                                             id="message"
                                             placeholder="Write Something..."
-                                            defaultValue={""}
                                         />
+                                        {validationErrors.message && <span className="invalid-feedback d-block">{validationErrors.message}</span>}
                                     </div>
                                     <div className="form-group mb-0">
                                         <button

@@ -1,7 +1,33 @@
-import React, { Fragment } from 'react';
+import { Fragment, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 function Footer(props) {
+    const [isScrolled, setIsScrolled] = useState(false);
+
+    useEffect(() => {
+        // Add scroll event listener
+        window.addEventListener('scroll', handleScroll);
+
+        // Clean up the event listener on unmount
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
+
+    const handleScroll = () => {
+        // Check if the user has scrolled more than a certain threshold (e.g., 100 pixels)
+        if (window.scrollY > 100) {
+            setIsScrolled(true);
+        } else {
+            setIsScrolled(false);
+        }
+    };
+    const scrollToTop = () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth', // Optional: Adds smooth scrolling animation
+        });
+    };
     return (
         <Fragment>
             {/* Footer Start */}
@@ -73,9 +99,9 @@ function Footer(props) {
                 </div>
             </footer>
             {/* Footer End */}
-            <Link to="#" data-target="html" className="back-to-top ft-sticky">
+            <button type='button' onClick={scrollToTop} className={`back-to-top ft-sticky ${isScrolled ? `d-flex` : ``}`}>
                 <i className="fal fa-chevron-up" />
-            </Link>
+            </button>
         </Fragment>
     );
 }

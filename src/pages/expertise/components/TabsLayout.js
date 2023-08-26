@@ -19,7 +19,7 @@ function TabsLayout(props) {
                         <div className="col-xl-8 col-lg-10">
                             <Tab.Content className='mt-5'>
                                 {props?.dataArray?.map((elm, i) => (
-                                    <Tab.Pane eventKey={'first' + i}>
+                                    <Tab.Pane key={i} eventKey={'first' + i}>
                                         <div className="section-header small mw-100">
                                             <img src="/assets/images/icon.png" className="icon" alt="icon" />
                                             <h3 className="title text-capitalize fw-light">

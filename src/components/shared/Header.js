@@ -1,12 +1,32 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { Link, NavLink } from 'react-router-dom';
 
 function Header(props) {
     const [state, setState] = useState(false);
+    const [isScrolled, setIsScrolled] = useState(false);
+
+    useEffect(() => {
+        // Add scroll event listener
+        window.addEventListener('scroll', handleScroll);
+
+        // Clean up the event listener on unmount
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
+
+    const handleScroll = () => {
+        // Check if the user has scrolled more than a certain threshold (e.g., 100 pixels)
+        if (window.scrollY > 100) {
+            setIsScrolled(true);
+        } else {
+            setIsScrolled(false);
+        }
+    };
     return (
         <>
             {/* Header Start */}
-            <header className={props.type ? 'header can-sticky absolute' : 'header can-sticky'} id="header">
+            <header className={props.type ? `header can-sticky ${isScrolled ? `sticky` : ''} absolute` : `header ${isScrolled ? `sticky` : ''} can-sticky`} id="header">
                 {/* logo */}
                 <div className="logo_wrap">
                     <div className={props.type ? "container-fluid" : "container"}>
@@ -52,35 +72,33 @@ function Header(props) {
                                 <nav className={state ? 'navigation open' : 'navigation'}>
                                     <ul className="main-menu">
                                         <li className="menu-item">
-                                            <Link to="/" className="scroll-link active">
-                                                Home
-                                            </Link>
+                                            <NavLink to='/'>Home</NavLink>
                                         </li>
                                         <li className="menu-item">
-                                            <Link to="/about" className="scroll-link">
+                                            <NavLink to="/about" className="scroll-link">
                                                 About Us
-                                            </Link>
+                                            </NavLink>
                                         </li>
                                         <li className="menu-item">
-                                            <Link to="/sub-continent" className="scroll-link">
+                                            <NavLink to="/sub-continent" className="scroll-link">
                                                 India &amp; Sub-Continent
-                                            </Link>
+                                            </NavLink>
                                         </li>
                                         <li className="menu-item">
-                                            <Link to="/curated-experiences" className="scroll-link">
+                                            <NavLink to="/curated-experiences" className="scroll-link">
                                                 Curated Experiences
-                                            </Link>
+                                            </NavLink>
                                         </li>
                                         <li className="menu-item">
-                                            <Link to="/expertise" className="scroll-link">
+                                            <NavLink to="/expertise" className="scroll-link">
                                                 Our Expertise
-                                            </Link>
+                                            </NavLink>
                                         </li>
                                         {/*  d-block d-lg-none */}
                                         <li className="menu-item">
-                                            <Link to="/contact" className="scroll-link">
+                                            <NavLink to="/contact" className="scroll-link">
                                                 Contact Us
-                                            </Link>
+                                            </NavLink>
                                         </li>
                                     </ul>
                                 </nav>

@@ -22,7 +22,7 @@ function TypeofExperiences(props) {
                                 <div className="bg-white p-3 p-md-5 mb-xl-30">
                                     <Tab.Content className='text-center'>
                                         {dataArray?.map((elm, i) => (
-                                            <Tab.Pane className='p-xl-4 p-2' eventKey={'first' + i}>
+                                            <Tab.Pane key={i} className='p-xl-4 p-2' eventKey={'first' + i}>
                                                 <div className="section-header">
                                                     <img src="/assets/images/icon.png" className="icon" alt="icon" />
                                                     <h3 className="title text-capitalize">
