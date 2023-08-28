@@ -1,19 +1,33 @@
 import React from 'react';
 import { Nav, Tab } from 'react-bootstrap';
-import dataArray from "../../../json/typeofExperiences.json";
+import { useEffect } from 'react';
+import { useGetExperienceItemsQuery } from '../../../rtk/services/allApis';
+import { useDispatch, useSelector } from 'react-redux';
+import { setExperiences } from '../../../rtk/feature/allSlice';
+import Preloader from '../../../components/shared/Preloader';
 
 function TypeofExperiences(props) {
+    const dispatch = useDispatch();
+    const { experiences } = useSelector((state) => state.all);
+    const { refetch: getItems, data: items, isSuccess: itemSuccess, isFetching: itemLoading } = useGetExperienceItemsQuery();
+    useEffect(() => { getItems(); }, [getItems]);
+    useEffect(() => {
+        if (itemSuccess) {
+            dispatch(setExperiences(items?.data))
+        }
+    }, [dispatch, itemSuccess, items?.data]);
     return (
         <>
+            {itemLoading && (<Preloader />)}
             <section className="section section-padding pt-0">
                 <Tab.Container id="left-tabs-example" defaultActiveKey={'first' + 0}>
                     <div className="container">
                         <div className="row">
                             <div className="col-lg-5">
                                 <Nav as={'ul'} variant="tabs" className="tabs style_two mb-xl-30 h-100">
-                                    {dataArray?.map((elm, i) => (
+                                    {experiences?.map((item, i) => (
                                         <Nav.Item as='li' key={i}>
-                                            <Nav.Link eventKey={'first' + i}>{elm?.title}</Nav.Link>
+                                            <Nav.Link eventKey={'first' + i}>{item?.attributes?.title}</Nav.Link>
                                         </Nav.Item>
                                     ))}
                                 </Nav>
@@ -21,19 +35,19 @@ function TypeofExperiences(props) {
                             <div className="col-lg-7">
                                 <div className="bg-white p-3 p-md-5 mb-xl-30">
                                     <Tab.Content className='text-center'>
-                                        {dataArray?.map((elm, i) => (
+                                        {experiences?.map((item, i) => (
                                             <Tab.Pane key={i} className='p-xl-4 p-2' eventKey={'first' + i}>
                                                 <div className="section-header">
                                                     <img src="/assets/images/icon.png" className="icon" alt="icon" />
                                                     <h3 className="title text-capitalize">
-                                                        {elm?.title}
+                                                        {item?.attributes?.title}
                                                     </h3>
                                                 </div>
-                                                <p className="thm-font-serif">{elm?.description}</p>
+                                                <p className="thm-font-serif">{item?.attributes?.description}</p>
                                                 <div className="image-box pt-3 animated-img">
                                                     <img
-                                                        src={`/assets/images/experiences/${elm?.image}.jpg`}
-                                                        alt={elm?.title}
+                                                        src={process.env.REACT_APP_BASE_URL + item?.attributes?.image?.data?.attributes?.url}
+                                                        alt={item?.attributes?.title}
                                                         className="image-fit"
                                                     />
                                                 </div>

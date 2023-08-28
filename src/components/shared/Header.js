@@ -64,7 +64,7 @@ function Header(props) {
                 </div>
                 {/* logo */}
                 {/* navigation */}
-                <div className="container-fluid">
+                <div className={props?.type ? "container-fluid" : "container"}>
                     <div className="row justify-content-end">
                         <div className="col-lg-10">
                             <div className="navigation_inner">

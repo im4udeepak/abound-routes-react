@@ -1430,6 +1430,7 @@ footer .menu li a {
   overflow: hidden;
   text-overflow: ellipsis;
 }
+.icon-style.gallery-slider .slick-slide>div,
 .icon-style.gallery-slider .slick-slide {
   height: 159px;
 }
