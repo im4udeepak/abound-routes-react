@@ -46,7 +46,7 @@ function TypeofExperiences(props) {
                                                 <p className="thm-font-serif">{item?.attributes?.description}</p>
                                                 <div className="image-box pt-3 animated-img">
                                                     <img
-                                                        src={process.env.REACT_APP_BASE_URL + item?.attributes?.image?.data?.attributes?.url}
+                                                        src={item?.attributes?.image?.data?.attributes?.url}
                                                         alt={item?.attributes?.title}
                                                         className="image-fit"
                                                     />

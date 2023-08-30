@@ -47,8 +47,8 @@ function Cta(props) {
                                             className="icon-style d-block gallery-slider"
                                         >
                                             {gallery?.map((item, i) => (
-                                                <Link to={process.env.REACT_APP_BASE_URL + item?.attributes?.image?.data?.attributes?.url} key={i} className='image-fit'>
-                                                    <img src={process.env.REACT_APP_BASE_URL + item?.attributes?.image?.data?.attributes?.url} alt={item?.attributes?.title} className='image-fit' />
+                                                <Link to={item?.attributes?.image?.data?.attributes?.url} key={i} className='image-fit'>
+                                                    <img src={item?.attributes?.image?.data?.attributes?.url} alt={item?.attributes?.title} className='image-fit' />
                                                 </Link>
                                             ))}
                                         </Slider>

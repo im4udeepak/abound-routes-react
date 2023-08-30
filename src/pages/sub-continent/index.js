@@ -44,7 +44,7 @@ function SubContinent(props) {
                                 <div className="col-lg-6 col-md-9">
                                     <div className="image-box pt-5 animated-img">
                                         <img
-                                            src={process.env.REACT_APP_BASE_URL + item?.attributes?.image?.data?.attributes?.url}
+                                            src={item?.attributes?.image?.data?.attributes?.url}
                                             alt={item?.attributes?.title}
                                             className="image-fit"
                                         />
@@ -76,7 +76,7 @@ function SubContinent(props) {
                                         </div>
                                         <div className="animated-img">
                                             <img
-                                                src={process.env.REACT_APP_BASE_URL + item?.attributes?.image?.data?.attributes?.url}
+                                                src={item?.attributes?.image?.data?.attributes?.url}
                                                 alt={item?.attributes?.title}
                                                 className="image-fit"
                                             />

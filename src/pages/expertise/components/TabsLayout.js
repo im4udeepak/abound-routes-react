@@ -31,7 +31,7 @@ function TabsLayout(props) {
                                             <div className="col-xl-8 col-md-10">
                                                 <div className="image-box mt-4 animated-img">
                                                     <img
-                                                        src={process.env.REACT_APP_BASE_URL + item?.attributes?.image?.data?.attributes?.url}
+                                                        src={item?.attributes?.image?.data?.attributes?.url}
                                                         alt={item?.attributes?.title}
                                                         className="image-fit"
                                                     />

@@ -58,7 +58,7 @@ function Destinations(props) {
                                                     <div dangerouslySetInnerHTML={{ __html: item?.attributes?.description }} />
                                                     <div className="image-box my-5 animated-img">
                                                         <img
-                                                            src={process.env.REACT_APP_BASE_URL + item?.attributes?.image?.data?.attributes?.url}
+                                                            src={item?.attributes?.image?.data?.attributes?.url}
                                                             alt={item?.attributes?.title}
                                                             className="image-fit"
                                                         />
